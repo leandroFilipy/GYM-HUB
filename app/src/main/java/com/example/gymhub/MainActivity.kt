@@ -37,21 +37,34 @@ import com.example.gymhub.ui.theme.GymHubTheme
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            login(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .safeDrawingPadding()
-            )
+            var telaAtual by remember { mutableStateOf("login") }
+
+            if (telaAtual == "login") {
+                login(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .safeDrawingPadding(),
+                    onLoginClick = {
+                        telaAtual = "home"
+                    }
+                )
+            } else {
+                Home()
+            }
         }
     }
 }
 
 @Composable
-fun login(modifier: Modifier = Modifier) {
+fun login(
+    modifier: Modifier = Modifier,
+    onLoginClick: () -> Unit
+) {
 
     var user by remember {
         mutableStateOf("");
@@ -79,7 +92,8 @@ fun login(modifier: Modifier = Modifier) {
                     .padding(top = 60.dp)
             )
 
-            Text(text = "Go Gym",
+            Text(
+                text = "Go Gym",
                 color = Color.White,
                 fontSize = 20.sp
             )
@@ -103,7 +117,7 @@ fun login(modifier: Modifier = Modifier) {
                 value = password,
                 modifier = Modifier
                     .padding(top = 30.dp),
-            onValueChange = { password = it },
+                onValueChange = { password = it },
                 label = { Text("Password") },
                 textStyle = TextStyle(fontSize = 20.sp),
 
@@ -117,7 +131,7 @@ fun login(modifier: Modifier = Modifier) {
 
             Button(
                 onClick = {
-
+                    onLoginClick()
                 },
                 modifier = Modifier
                     .padding(top = 30.dp)
