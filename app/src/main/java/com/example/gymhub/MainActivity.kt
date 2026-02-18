@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
@@ -115,10 +116,13 @@ fun login(modifier: Modifier = Modifier) {
 
 
             Button(
-                onClick = {  },
+                onClick = {
+
+                },
                 modifier = Modifier
-                    .padding(top = 24.dp)
-                    .width(280.dp),
+                    .padding(top = 30.dp)
+                    .width(280.dp)
+                    .height(45.dp),
                 shape = RoundedCornerShape(8.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White,
@@ -126,7 +130,7 @@ fun login(modifier: Modifier = Modifier) {
                 )
             ) {
                 Text(
-                    text = "ENTRAR",
+                    text = "Login",
                     style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 16.sp)
                 )
             }
