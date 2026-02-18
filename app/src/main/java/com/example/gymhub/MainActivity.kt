@@ -12,6 +12,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
@@ -28,15 +31,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.gymhub.ui.theme.GymHubTheme
-
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            login(modifier = Modifier
-                .fillMaxSize()
-                .safeDrawingPadding())
+            login(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .safeDrawingPadding()
+            )
         }
     }
 }
@@ -47,36 +55,81 @@ fun login(modifier: Modifier = Modifier) {
     var user by remember {
         mutableStateOf("");
     }
-
+    var password by remember {
+        mutableStateOf("");
+    }
     Surface(
-        modifier = modifier.fillMaxSize(),
-        color = Color(0xFF5A0A0A)
+        modifier = modifier.fillMaxSize(), color = Color(0xFF5A0A0A)
 
 
     ) {
 
-        Column (
+        Column(
             modifier = modifier,
             horizontalAlignment = Alignment.CenterHorizontally,
 
-        ){
+            ) {
 
-            Image(painter = painterResource(R.drawable.logo), contentDescription = "Dado2",
+            Image(
+                painter = painterResource(R.drawable.logo),
+                contentDescription = "Dado2",
                 modifier = Modifier
                     .size(160.dp)
-                    .padding(top = 60.dp))
+                    .padding(top = 60.dp)
+            )
 
-            
-            OutlinedTextField(value = user,
+            Text(text = "Go Gym",
+                color = Color.White,
+                fontSize = 20.sp
+            )
+
+
+
+            OutlinedTextField(
+                value = user,
                 onValueChange = { user = it },
-                label = { Text("User")},
-                modifier = modifier.width(100.dp),
+                modifier = Modifier.padding(top = 170.dp),
+                label = { Text("User") },
+                singleLine = true,
+                textStyle = TextStyle(fontSize = 20.sp),
+                colors = TextFieldDefaults.colors(
+                    focusedContainerColor = Color.White,
+                    unfocusedContainerColor = Color.White.copy(alpha = 1f)
+                )
+            )
+
+            OutlinedTextField(
+                value = password,
+                modifier = Modifier
+                    .padding(top = 30.dp),
+            onValueChange = { password = it },
+                label = { Text("Password") },
+                textStyle = TextStyle(fontSize = 20.sp),
+
                 singleLine = true,
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = Color.White,
-                    unfocusedContainerColor = Color.White.copy(alpha = 0.8f)
+                    unfocusedContainerColor = Color.White.copy(alpha = 1f)
                 )
             )
+
+
+            Button(
+                onClick = {  },
+                modifier = Modifier
+                    .padding(top = 24.dp)
+                    .width(280.dp),
+                shape = RoundedCornerShape(8.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.White,
+                    contentColor = Color(0xFF5A0A0A)
+                )
+            ) {
+                Text(
+                    text = "ENTRAR",
+                    style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                )
+            }
         }
 
     }
