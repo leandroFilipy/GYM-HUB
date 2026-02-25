@@ -28,11 +28,7 @@ O objetivo é oferecer uma experiência simples, moderna e eficiente para gerenc
 
 ## 🛠️ Tecnologias Utilizadas  
 
-- 💻 Java  
-- 🗄️ Banco de Dados  
-- 🌐 HTML  
-- 🎨 CSS  
-- ⚡ JavaScript  
+- Kotlin 💸💰
 
 ---
 
