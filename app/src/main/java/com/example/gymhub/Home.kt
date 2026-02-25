@@ -94,7 +94,7 @@ fun Home(onStartExercise: (String) -> Unit) {
                     ExerciseCard(
                         title = "Puxada alta",
                         reps = "3 sets of 12 reps",
-                        imageRes = R.drawable.bah,
+                        imageRes = R.drawable.puxada,
                         onStartClick = { onStartExercise("puxada") })
 
                 }
@@ -141,7 +141,7 @@ fun ExerciseCard(
         ) {
 
             Image(
-                painter = painterResource(R.drawable.bah),
+                painter = painterResource(imageRes),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier

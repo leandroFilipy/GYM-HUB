@@ -61,6 +61,8 @@ class MainActivity : ComponentActivity() {
                     onBack = { telaAtual = "Home" }
                 )
                 "supino" -> supino(onBack = { telaAtual = "Home" })
+                "puxada" -> puxada(onBack = { telaAtual = "Home" })
+                "triceps" -> triceps(onBack = { telaAtual = "Home" })
             }
         }
     }
