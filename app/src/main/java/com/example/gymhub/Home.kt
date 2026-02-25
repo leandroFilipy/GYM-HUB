@@ -103,7 +103,7 @@ fun Home(onStartExercise: (String) -> Unit) {
                     ExerciseCard(
                         title = "Triceps na polia alta",
                         reps = "3 sets of 15 reps",
-                        imageRes = R.drawable.bah,
+                        imageRes = R.drawable.triceps,
                         onStartClick = { onStartExercise("triceps") })
 
                 }

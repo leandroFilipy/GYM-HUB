@@ -32,7 +32,7 @@ fun triceps(onBack: () -> Unit) {
                 .height(320.dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.supino),
+                painter = painterResource(id = R.drawable.triceps),
                 contentDescription = "Exercício",
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop
@@ -90,7 +90,7 @@ fun triceps(onBack: () -> Unit) {
             Spacer(modifier = Modifier.height(32.dp))
 
             Text(
-                text = "Instructor",
+                text = "Professor",
                 color = Color.White,
                 fontWeight = FontWeight.SemiBold,
                 fontSize = 18.sp
