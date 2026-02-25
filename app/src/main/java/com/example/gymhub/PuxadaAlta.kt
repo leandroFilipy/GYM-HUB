@@ -8,7 +8,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.*
+// IMPORTANTE: Importar o state para o botão funcionar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -21,6 +26,10 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun puxada(onBack: () -> Unit) {
+    // Variável que controla a contagem das séries
+    var seriesFeitas by remember { mutableIntStateOf(0) }
+    val totalSeries = 4
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -81,7 +90,7 @@ fun puxada(onBack: () -> Unit) {
             Spacer(modifier = Modifier.height(20.dp))
 
             Text(
-                text = "Para a Puxada Alta, posicione-se no banco com as coxas presas sob os rolos e segure a barra com as mãos em uma largura superior à dos ombros. Puxe o peso em direção à parte superior do peito, projetando o tórax levemente para frente e mantendo os cotovelos apontados para baixo. Este exercício foca principalmente no latíssimo do dorso (asa das costas), mas também exige grande esforço dos romboides, trapézio e bíceps durante a flexão dos braços." ,
+                text = "Para a Puxada Alta, posicione-se no banco com as coxas presas sob os rolos e segure a barra com as mãos em uma largura superior à dos ombros. Puxe o peso em direção à parte superior do peito, projetando o tórax levemente para frente e mantendo os cotovelos apontados para baixo.",
                 color = Color.LightGray.copy(alpha = 0.8f),
                 lineHeight = 24.sp,
                 fontSize = 16.sp
@@ -126,15 +135,24 @@ fun puxada(onBack: () -> Unit) {
             Spacer(modifier = Modifier.weight(1f))
 
             Button(
-                onClick = {  },
+                onClick = {
+                    if (seriesFeitas < totalSeries) {
+                        seriesFeitas++
+                    }
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(58.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6C63FF)),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = if (seriesFeitas == totalSeries) Color(0xFF4CAF50) else Color(0xFF6C63FF)
+                ),
                 shape = RoundedCornerShape(16.dp)
             ) {
                 Text(
-                    text = "Book class",
+                    text = if (seriesFeitas < totalSeries)
+                        "Série Feita ($seriesFeitas/$totalSeries)"
+                    else
+                        "Concluído!",
                     color = Color.White,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
