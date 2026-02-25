@@ -15,33 +15,11 @@ O objetivo é oferecer uma experiência simples, moderna e eficiente para gerenc
 
 ---
 
-## ✨ Funcionalidades  
-
-- ✅ Cadastro de usuários  
-- 🔐 Login e autenticação  
-- 🏋️ Gerenciamento de treinos  
-- 📊 Acompanhamento de desempenho  
-- 🎨 Interface moderna e intuitiva  
-- ⚡ Sistema organizado e escalável  
-
----
-
 ## 🛠️ Tecnologias Utilizadas  
 
 - Kotlin 💸💰
 
 ---
-
-
-## 📂 Estrutura do Projeto  
-
-
-GYM-HUB/
-│── src/
-│── assets/
-│── database/
-│── README.md
-
 
 
 ## ⚙️ Como Executar  
