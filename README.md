@@ -1,42 +1,108 @@
-## GYM HUB
+# 🏋️‍♂️ GYM HUB
 
-Aplicativo Android desenvolvido em Kotlin com Jetpack Compose para **monitorar os treinos da semana**.
+Aplicativo Android desenvolvido em **Kotlin + Jetpack Compose** para **organizar e monitorar treinos semanais** de forma simples, visual e eficiente.
 
-Ele foi pensado para organizar os exercícios do dia, permitindo que o usuário veja o treino planejado e acompanhe o progresso das séries de cada exercício.
+O objetivo do app é permitir que o usuário acompanhe o treino do dia, visualize detalhes de cada exercício e marque as séries realizadas até concluir o movimento.
 
-### Visão geral
+---
 
-- **Login**: tela inicial onde o usuário informa usuário e senha e acessa o app.
-- **Home**: mostra o **dia da semana** (atualmente configurado como "MONDAY") e a **lista de exercícios do treino do dia**, com nome, imagem e quantidade de séries/repetições.
-- **Detalhe do exercício**: ao clicar em um exercício na Home, o app abre uma tela dedicada com:
-  - imagem em destaque do exercício;
-  - descrição explicando como executar o movimento;
-  - informações do instrutor;
-  - botão para **contar as séries realizadas**.
+## 📱 Visão Geral do Aplicativo
 
-Nos detalhes de cada exercício, o botão atualiza o texto conforme o usuário registra as séries, exibindo algo como **"Série Feita (2/4)"** até chegar em **"Concluído!"**, indicando que todas as séries planejadas foram feitas.
+O fluxo do aplicativo é dividido em três telas principais:
 
-### Funcionalidades principais
+### 🔐 Tela de Login
+- Campo para usuário e senha  
+- Acesso ao sistema após autenticação  
+- Primeira tela exibida ao abrir o app  
 
-- **Monitoramento dos treinos da semana** por dia (com foco no treino do dia atual).
-- **Lista de exercícios do dia** com nome, imagem e séries recomendadas.
-- **Abertura do exercício ao clicar na Home**, com tela dedicada.
-- **Contador de séries** dentro da tela do exercício, mostrando o progresso até concluir o treino daquele movimento.
+---
 
-### Tecnologias utilizadas
+### 🏠 Tela Home
+- Exibe o **dia da semana** (ex: `MONDAY`)  
+- Lista com os **exercícios do treino do dia**  
 
-- Android nativo
-- Kotlin
-- Jetpack Compose
-- Material 3
+Cada exercício contém:
+- 🖼️ Imagem ilustrativa  
+- 🏷️ Nome do exercício  
+- 🔢 Quantidade de séries/repetições recomendadas  
 
-### Como executar o projeto
+Ao clicar em um exercício, o usuário é direcionado para a tela de detalhes.
 
-1. Abra o projeto no **Android Studio**.
-2. Aguarde a sincronização do Gradle.
-3. Conecte um emulador ou dispositivo físico Android.
-4. Execute o app (`Run > Run 'app'`).
+---
 
-O aplicativo será iniciado na tela de login e, após o acesso, mostrará a Home com o dia da semana e o treino do dia. Clicando em qualquer exercício, você poderá visualizar os detalhes e marcar as séries concluídas.
+### 📖 Tela de Detalhes do Exercício
+
+Tela dedicada com informações completas do movimento:
+
+- 🖼️ Imagem em destaque  
+- 📝 Descrição explicando como executar corretamente  
+- 👨‍🏫 Informações do instrutor  
+- ✅ Botão para registrar as séries realizadas  
+
+#### 📊 Controle de Progresso
+
+O botão atualiza dinamicamente conforme o usuário registra as séries:
+
+- `Série Feita (1/4)`
+- `Série Feita (2/4)`
+- `Série Feita (3/4)`
+- `Concluído! 🎉`
+
+Isso permite acompanhar visualmente a evolução até finalizar o exercício.
+
+---
+
+## 🚀 Funcionalidades Principais
+
+✔ Monitoramento do treino do dia  
+✔ Listagem organizada de exercícios  
+✔ Navegação entre telas com clique na Home  
+✔ Tela detalhada por exercício  
+✔ Contador interativo de séries  
+✔ Feedback visual de conclusão  
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- 📱 Android Nativo  
+- 💻 Kotlin  
+- 🎨 Jetpack Compose  
+- 🧩 Material 3  
+
+---
+
+## 🧠 Arquitetura e Conceitos Aplicados
+
+- Composição de UI com Jetpack Compose  
+- Gerenciamento de estado para controle de séries  
+- Navegação entre telas  
+- Componentização de interfaces  
+- Estrutura organizada de telas e lógica  
+
+---
+
+## ▶ Como Executar o Projeto
+
+1. Abra o projeto no **Android Studio**
+2. Aguarde a sincronização do Gradle
+3. Conecte um emulador ou dispositivo físico Android
+4. Execute o projeto:
+   
+Run > Run 'app'
+
+O aplicativo iniciará na tela de login e, após o acesso, exibirá o treino do dia com seus respectivos exercícios.
+
+---
+
+### 🔮 Melhorias Planejadas
+- Persistência de progresso  
+- Treinos personalizados por usuário  
+- Histórico semanal  
+- Dark Mode  
+- Integração futura com backend  
+- Video mostrando como executar exercicios 
+
+---
 
 # GYM-HUB
