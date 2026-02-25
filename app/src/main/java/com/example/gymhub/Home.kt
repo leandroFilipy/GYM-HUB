@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun Home(onStartExercise: () -> Unit) {
+fun Home(onStartExercise: (String) -> Unit) {
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -76,37 +76,36 @@ fun Home(onStartExercise: () -> Unit) {
 
                 item {
                     ExerciseCard(
-                        title = "W Bar Curl",
+                        title = "Rosca W",
                         reps = "3 sets of 15 reps",
                         imageRes = R.drawable.bah,
-                        onStartClick = onStartExercise
+                        onStartClick = { onStartExercise("roscaW") }
                     )
                 }
                 item {
                     ExerciseCard(
-                        title = "Bench Press",
+                        title = "Supino",
                         reps = "4 sets of 10 reps",
                         imageRes = R.drawable.supino,
-                                onStartClick = onStartExercise
-                    )
+                        onStartClick = { onStartExercise("supino") })
                 }
 
                 item {
                     ExerciseCard(
-                        title = "Lat Pulldown",
+                        title = "Puxada alta",
                         reps = "3 sets of 12 reps",
                         imageRes = R.drawable.bah,
-                        onStartClick = onStartExercise
-                    )
+                        onStartClick = { onStartExercise("puxada") })
+
                 }
 
                 item {
                     ExerciseCard(
-                        title = "Triceps Pushdown",
+                        title = "Triceps na polia alta",
                         reps = "3 sets of 15 reps",
                         imageRes = R.drawable.bah,
-                        onStartClick = onStartExercise
-                    )
+                        onStartClick = { onStartExercise("triceps") })
+
                 }
             }
 

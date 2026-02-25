@@ -55,7 +55,7 @@ class MainActivity : ComponentActivity() {
                     onLoginClick = { telaAtual = "Home" }
                 )
                 "Home" -> Home(
-                    onStartExercise = { telaAtual = "roscaW" }
+                    onStartExercise = { destino -> telaAtual = destino }
                 )
                 "roscaW" -> roscaW(
                     onBack = { telaAtual = "Home" }

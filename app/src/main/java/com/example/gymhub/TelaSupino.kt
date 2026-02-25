@@ -81,7 +81,7 @@ fun supino(onBack: () -> Unit) {
             Spacer(modifier = Modifier.height(20.dp))
 
             Text(
-                text = "A Rosca W é um dos exercícios mais eficazes para isolar o bíceps e construir braços fortes. O uso da barra W permite uma pegada mais anatômica, reduzindo a tensão nos punhos e focando o esforço no pico do bíceps e no braquial. Ideal para quem busca volume muscular com segurança e conforto articular.",
+                text = "Para executar o supino reto, deite-se no banco com os pés firmes no chão e escápulas retraídas. Desça a barra de forma controlada até o centro do peito, mantendo os cotovelos em um ângulo de 45°, e empurre-a de volta com explosão até a extensão dos braços. Este exercício é o principal construtor do peitoral maior, mas também recruta intensamente o deltoide anterior (ombro) e o tríceps braquial como auxiliares." ,
                 color = Color.LightGray.copy(alpha = 0.8f),
                 lineHeight = 24.sp,
                 fontSize = 16.sp
