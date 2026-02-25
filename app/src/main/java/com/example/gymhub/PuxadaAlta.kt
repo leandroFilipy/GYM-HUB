@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun puxada(onBack: () -> Unit) {
-    // Variável que controla a contagem das séries
     var seriesFeitas by remember { mutableIntStateOf(0) }
     val totalSeries = 4
 

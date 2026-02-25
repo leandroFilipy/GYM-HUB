@@ -81,7 +81,7 @@ fun login(
         mutableStateOf("");
     }
     Surface(
-        modifier = modifier.fillMaxSize(), color = Color(0xFF5A0A0A)
+        modifier = modifier.fillMaxSize(), color = Color(0xFF12121D)
 
 
     ) {

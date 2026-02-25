@@ -37,7 +37,7 @@ fun Home(onStartExercise: (String) -> Unit) {
 
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = Color(0xFF2A0303)
+        color = Color(0xFF12121D)
     ) {
 
         Column(
@@ -175,7 +175,7 @@ fun ExerciseCard(
                         .height(45.dp),
                     shape = RoundedCornerShape(8.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFF2A0303),
+                        containerColor = Color(0xFF12121D),
                         contentColor = Color.White
                     )
                 ) {
