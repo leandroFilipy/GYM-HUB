@@ -37,24 +37,30 @@ import com.example.gymhub.ui.theme.GymHubTheme
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.runtime.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            // Estado que controla a navegação
             var telaAtual by remember { mutableStateOf("login") }
 
-            if (telaAtual == "login") {
-                login(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .safeDrawingPadding(),
-                    onLoginClick = {
-                        telaAtual = "home"
-                    }
+            when (telaAtual) {
+                "login" -> login(
+                    modifier = Modifier.fillMaxSize().safeDrawingPadding(),
+                    onLoginClick = { telaAtual = "Home" }
                 )
-            } else {
-                Home()
+                "Home" -> Home(
+                    onStartExercise = { telaAtual = "roscaW" }
+                )
+                "roscaW" -> roscaW(
+                    onBack = { telaAtual = "Home" }
+                )
+                "supino" -> supino(onBack = { telaAtual = "Home" })
             }
         }
     }
